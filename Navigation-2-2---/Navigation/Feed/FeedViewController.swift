@@ -51,10 +51,10 @@ final class FeedViewController: UIViewController {
         return field
     }()
     
-    private lazy var checkButton: CustomButton = { [weak self] in
+    private lazy var checkButton: CustomButton = {
         let button = CustomButton(title: "check word",
                                   color: .systemBlue,
-                                  target: self!.didTapCheckButton)
+                                  target: { [weak self] in self?.didTapCheckButton() })
         
         button.translatesAutoresizingMaskIntoConstraints = false
         
@@ -73,20 +73,20 @@ final class FeedViewController: UIViewController {
         return label
     }()
     
-    private lazy var postPushButtonFirst: CustomButton = { [weak self] in
+    private lazy var postPushButtonFirst: CustomButton = {
         let button = CustomButton(title: "Push Post",
                                   color: .clear,
-                                  target: self!.didTapPushButton)
+                                  target: { [weak self] in self?.didTapPushButton() })
         
         button.translatesAutoresizingMaskIntoConstraints = false
         
         return button
     }()
     
-    private lazy var postPushButtonSecond: CustomButton = { [weak self] in
+    private lazy var postPushButtonSecond: CustomButton = {
         let button = CustomButton(title: "Push Post",
                                   color: .clear,
-                                  target: self!.didTapPushButton)
+                                  target: { [weak self] in self?.didTapPushButton() })
         
         button.translatesAutoresizingMaskIntoConstraints = false
         

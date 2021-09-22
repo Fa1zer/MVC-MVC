@@ -10,10 +10,10 @@ import UIKit
 import SnapKit
 
 class InfoViewController: UIViewController {
-    private lazy var button: CustomButton = { [weak self] in
+    private lazy var button: CustomButton = {
         let button = CustomButton(title: "Tap me",
                                   color: .clear,
-                                  target: self!.showAlert)
+                                  target: { [weak self] in self?.showAlert() })
         
         button.translatesAutoresizingMaskIntoConstraints = false
         

@@ -17,7 +17,7 @@ class LogInViewController: UIViewController {
     private lazy var logInButton: CustomButton = {
        let button = CustomButton(title: "Log In",
                                  color: color,
-                                 target: tapButton)
+                                 target: { [weak self] in self?.tapButton() })
         
         button.tintColor = .white
         button.layer.cornerRadius = 10
